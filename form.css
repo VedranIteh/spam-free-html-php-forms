@@ -1,0 +1,26 @@
+/* a css file styling/hidding our honeypot traps
+ * We'll use a general class "field" that will be attributed to all of the inout fields but will identify
+ * honeypots using nth-of-type so smarter bots don't recognize naming differences in html. 
+ * Please change the ".field" class name in one of your liking just in case they crack down on this.
+ * if you change the ordering of the fields in the HTML please adjust the nth numbers which indicate the list order position in html. 
+ */
+
+.field:nth-of-type(1) { /* hide trap 1 field with display property */
+display: none;
+}
+.field:nth-of-type(2) { /* hide trap 2 with visibility in case a bot recognizes the previous */
+visibility: hidden;
+}
+/* this one is disabled by default because hidding it in this manner is not standard and some auto form fillers 
+ * from legitimate clients may get trapped with it. unlikely tho. But if you know your visitors please feel free to uncomment
+ * from here and from the contact.php file too.
+ 
+.field:nth-of-type(3) {
+position: absolute;
+top: 0;
+left: 0;
+height: 0px;
+width: 0px;
+border:none;
+}
+*/
