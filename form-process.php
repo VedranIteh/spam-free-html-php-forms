@@ -4,12 +4,25 @@ session_start();
 $form_url = "https://yoursite.com/contact-page"; //external url where your html form resides. copy it from the browser url bar.
 $your_mail = "info@yoursite.com"; //where to send emails
 $timer = 9; //how many seconds minimum does a bot have to spend on the page before submitting. If it submits too fast, its not human.
+$use_rbl = 1; //set this to 0 if you dont want to use RBL (stopforumspam.com). if you get errors, troubleshoot this first, don't enable if behind a CDN 
 // NO NEED TO EDIT FURTHER
+
+// RBL check
+$inrbl = 0;
+if ($use_rbl){
+    $subnets = explode('.',$_SERVER['REMOTE_ADDR']);
+    $rev_ip = implode('.', array_reverse($subnets)); 
+    $res = gethostbyname($rev_ip.'.i.rbl.stopforumspam.org');
+    $rbl_res = explode('.',$res);
+    if ($rbl_res[0] == 127 && $rbl_res[1] >= 2 && $rbl_res[2] < 7)
+        $inrbl = 1;
+}
 
 if((
     $_SERVER['REQUEST_METHOD']=="POST") 
     && (strpos($_SERVER['HTTP_REFERER'],$form_url) !== false) 
     && (empty($_POST['contact-city']))
+    && (!$inrbl)
     && (empty($_POST['contact-county'])) 
     && (empty($_POST['contact-state'])) 
     && (empty($_POST['contact-zip']))
