@@ -10,13 +10,15 @@ $use_rbl = 1; //set this to 0 if you dont want to use RBL (stopforumspam.com). i
 // RBL check
 $inrbl = true;
 if ($use_rbl){
-    $subnets = explode('.',$_SERVER['REMOTE_ADDR']);
-    $rev_ip = implode('.', array_reverse($subnets));
-    $res = gethostbyname($rev_ip.'.i.rbl.stopforumspam.org');
-    $rbl_res = explode('.',$res);
-    if ($rbl_res[0] == 127 && $rbl_res[1] >= 2 && $rbl_res[2] < 7)
-        $inrbl = false;
+     $subnets = explode('.',$_SERVER['REMOTE_ADDR']);
+     $rev_ip = implode('.', array_reverse($subnets));
+     $query = $rev_ip.'.i.rbl.stopforumspam.org';
+     $res = gethostbyname($query);
+     $rbl_res = explode('.',$res);
+     if ($query != $res && $rbl_res[0] == 127 && $rbl_res[1] >= 2 && $rbl_res[2] < 7)
+         $inrbl = false;
 }
+
 
 if(($_SERVER['REQUEST_METHOD']=="POST")
     && (strpos($_SERVER['HTTP_REFERER'],$form_url) !== false)
