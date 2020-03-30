@@ -31,7 +31,7 @@ $_SESSION['when'] = rand(10,99).date("U"); //timestamp and some random nums to m
 </form>
 <script>
 var h5 = document.getElementById("contact-surname");
-h5.style.display = "none";;
+h5.parentNode.removeChild(h5);
 </script>
 
 /* CONTACT FORM END */
