@@ -1,7 +1,7 @@
 # Spam-free contact form
 Secure, spam blocking, bot deferring, contact forms, login dialogs and more ... without annoying captchas.
 
-# Step by step intall Instructions:
+# Step by step install Instructions:
 1. download and include form.css or just copy/paste from it into your own style file
 2. put form-process in your root dir (www or public_html)
 3. copy and paste the php snipet and form html (including javascript) into your contact template.
