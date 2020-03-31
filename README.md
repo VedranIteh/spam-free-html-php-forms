@@ -18,3 +18,6 @@ Secure, spam blocking, bot deferring, contact forms, login dialogs and more ... 
 
 Need help setting it up?
 http://media.infoteh.hr
+
+Something wrong?
+[Report it here](https://github.com/VedranIteh/spam-free-html-php-forms/issues)
