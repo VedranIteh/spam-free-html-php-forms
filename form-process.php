@@ -3,7 +3,7 @@ session_start();
 // EDIT FROM HERE
 $form_url = "https://yoursite.com/html-form.php"; //external url where your html form resides. copy it from the browser url bar.
 $your_mail = "info@yoursite.com"; //where to send emails
-$timer = 9; //how many seconds minimum does a bot have to spend on the page before submitting. If it submits too fast, its not human.
+$timer = 7; //how many seconds minimum does a visitor have to spend on the page before submitting. If it submits too fast, its not human.
 $use_rbl = 1; //set this to 0 if you dont want to use RBL (stopforumspam.com). if you get errors, troubleshoot this first, don't enable if behind a CDN
 // NO NEED TO EDIT FURTHER
 
@@ -36,7 +36,8 @@ if(($_SERVER['REQUEST_METHOD']=="POST")
 
         array_filter($_POST,"strip_tags");
     
-        /* you can edit from here and do whatever you want with the data */
+        /* you can edit from here and do whatever you want with the data
+           currently we just parse everything to your email.*/
         foreach ($_POST as $lname=>$line)
             if (!empty($line))
             $body .= strip_tags($lname).": ".$line."\n";
@@ -50,7 +51,7 @@ if(($_SERVER['REQUEST_METHOD']=="POST")
   }
 
 // we don't let them know if the email fails. another level of security thru obscurity
-header ("Location: $form_url?success=1");
+header ("Location: $form_url?success=1"); //wait for the success code and present some kind of a message to your visitors. or just disregard it.
 
 
 ?>
