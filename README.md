@@ -17,7 +17,7 @@ Secure, spam blocking, bot deferring, contact forms, login dialogs and more ... 
 5. RBL - check the visitors IP against a well known spammers database
 
 Need help setting it up?
-[Contact us](http://media.infoteh.hr)
+support [at] infoteh.hr
 
 Something wrong?
 [Report it here](https://github.com/VedranIteh/spam-free-html-php-forms/issues)
