@@ -5,11 +5,15 @@
  * if you change the ordering of the fields in the HTML please adjust the nth numbers which indicate the list order position in html. 
  */
 
-.field:nth-of-type(4) { /* hide trap 1 field with display property */
+input.field[name=city] { /* hide trap 1 field with display property */
 display: none;
 }
-.field:nth-of-type(5) { /* hide trap 2 with visibility in case a bot recognizes the previous */
-visibility: hidden;
+input.field[name=county] { /* hide trap 2 with visibility in case a bot recognizes the previous */
+ visibility: hidden;
+ padding: 0px;
+ margin: 0px;
+ height: 0px;
+ width: 0px;
 }
 /* this one is disabled by default because hidding it in this manner is not standard and some auto form fillers 
  * from legitimate clients may get trapped with it. unlikely tho. But if you know your visitors please feel free to uncomment
