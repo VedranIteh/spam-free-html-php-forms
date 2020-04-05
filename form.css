@@ -5,10 +5,10 @@
  * if you change the ordering of the fields in the HTML please adjust the nth numbers which indicate the list order position in html. 
  */
 
-input.field[name=city] { /* hide trap 1 field with display property */
+input.fields[name=city] { /* hide trap 1 field with display property */
 display: none;
 }
-input.field[name=county] { /* hide trap 2 with visibility in case a bot recognizes the previous */
+input.fields[name=county] { /* hide trap 2 with visibility in case a bot recognizes the previous */
  visibility: hidden;
  padding: 0px;
  margin: 0px;
