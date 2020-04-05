@@ -15,16 +15,3 @@ input.field[name=county] { /* hide trap 2 with visibility in case a bot recogniz
  height: 0px;
  width: 0px;
 }
-/* this one is disabled by default because hidding it in this manner is not standard and some auto form fillers 
- * from legitimate clients may get trapped with it. unlikely tho. But if you know your visitors please feel free to uncomment
- * from here and from the contact.php file too.
- 
-.field:nth-of-type(6) {
-position: absolute;
-top: 0;
-left: 0;
-height: 0px;
-width: 0px;
-border:none;
-}
-*/
